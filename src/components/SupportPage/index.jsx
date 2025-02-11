@@ -270,7 +270,7 @@ const CustomerSupportPage = () => {
                 className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors"
                 disabled={isLoading}
               >
-                Finalizar atendimento
+                End Chat
               </button>
             )}
           </div>
