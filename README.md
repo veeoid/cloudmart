@@ -6,7 +6,7 @@ CloudMart is a **multi-cloud** e-commerce platform that integrates **AWS**, **Go
 
 ## Demo Video
 
-[![Watch the video](https://i.vimeocdn.com/video/1055755843_640.jpg)](https://player.vimeo.com/video/1055755843?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479)
+[![Watch the video](assets\dmo.png)](https://player.vimeo.com/video/1055755843?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479)
 
 ## Prerequisites
 
