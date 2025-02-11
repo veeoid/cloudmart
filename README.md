@@ -1,9 +1,12 @@
-
 # CloudMart - Multi-Cloud E-Commerce Application
 
 ## Overview
 
 CloudMart is a **multi-cloud** e-commerce platform that integrates **AWS**, **Google Cloud**, **Microsoft Azure**, and **OpenAI** technologies. This platform provides a scalable, AI-powered solution for product recommendations, customer support, and sentiment analysis. The project leverages **Terraform** for infrastructure management, **Docker** for containerization, **Kubernetes** for deployment, **Lambda** functions for serverless processing, **BigQuery** for analytics, and **CI/CD pipelines** using **AWS CodePipeline**.
+
+## Demo Video
+
+![Demo Video](assets/demo.mp4)
 
 ## Prerequisites
 
@@ -139,6 +142,7 @@ CloudMart leverages **AWS Lambda**, **DynamoDB**, and **S3** services, with **Te
 #### **3.2 Terraform Setup for AWS Resources**
 
 1. Remove the existing `main.tf` and create a new one:
+
    ```bash
    rm main.tf
    nano main.tf
@@ -200,10 +204,10 @@ CloudMart uses **Azure Text Analytics** for sentiment analysis.
 1. Open the `cloudmart-backend.yaml` file and add the **Azure** and **OpenAI** environment variables:
 
 ```yaml
-        - name: AZURE_ENDPOINT
-          value: "xxxx"
-        - name: AZURE_API_KEY
-          value: "xxxx"
+- name: AZURE_ENDPOINT
+  value: "xxxx"
+- name: AZURE_API_KEY
+  value: "xxxx"
 ```
 
 #### **5.2 Build and Deploy the Backend**
@@ -234,7 +238,7 @@ git push
 
 #### **7.2 Configure AWS CodePipeline**
 
-1. **Create Pipeline**: 
+1. **Create Pipeline**:
    - Go to **AWS CodePipeline** and create a new pipeline named `cloudmart-cicd-pipeline`.
    - Set **GitHub repository** as the source.
    - Add **cloudmartBuild** as the build stage using **AWS CodeBuild**.
