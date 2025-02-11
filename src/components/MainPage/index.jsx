@@ -42,7 +42,7 @@ const ProductCard = ({ product, onAddToCart }) => {
         <p className="text-gray-600">${product.price.toFixed(2)}</p>
         <button
           onClick={() => onAddToCart(product)}
-          className="mt-2 bg-gold-600 text-white py-2 px-4 rounded hover:bg-gold-700 transition-colors w-full"
+          className="mt-2 bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700 transition-colors w-full"
         >
           Add to Cart
         </button>
@@ -95,7 +95,7 @@ const CloudMartMainPage = () => {
             <input
               type="text"
               placeholder="Search products..."
-              className="pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent"
+              className="pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
               value={searchTerm}
               onChange={handleSearch}
             />
