@@ -546,45 +546,87 @@ CloudMart is a **multi-cloud** e-commerce platform that integrates **AWS**, **Go
 
 #
 
-**6. Docker Configuration (Frontend & Backend):**
+## 6. Docker Configuration (Frontend & Backend)
 
-    1. Install Docker on EC2 (You can refer to previous sections for commands and setup.
-    2. Create Docker image for both Frontend and Backend by following the steps mentioned for downloading and setting up the Dockerfiles in each directory.
-    3. Deploy both Frontend and Backend on Kubernetes using EKS, configuring the YAML files and using commands for setting up the pods, services, etc.
-    4. Push Docker images to ECR (Elastic Container Registry) for both the frontend and backend.
-    5. Update Kubernetes Deployment with correct configurations and deploy the application.
+1. **Install Docker on EC2:**
 
-#
+   - Follow the installation commands for Docker as mentioned in previous sections.
 
-**7. CI/CD Pipeline Configuration (AWS CodePipeline):** 1. Push application code to GitHub and link it to AWS CodePipeline. 2. Create the build project in AWS CodeBuild to build the Docker images. 3. Configure AWS CodeBuild for the Application Deployment to automatically deploy when there are changes in the repository. 4. Run the CI/CD Pipeline to test automatic deployment and ensure everything is deployed properly after each commit.
+2. **Create Docker Images for Frontend and Backend:**
 
-#
+   - Download the source code for both frontend and backend.
+   - Set up Dockerfiles in each directory and follow the necessary steps to create the images.
 
-**8. Testing and Verify:** 1. Make changes on GitHub to verify the pipeline is triggered properly. 2. Monitor the Kubernetes Deployment to ensure that the updates are applied successfully. 3. Check the EC2 Instance, and other infrastructure like DynamoDB, and BigQuery to verify if everything is functioning correctly.
+3. **Deploy Frontend and Backend on Kubernetes using EKS:**
 
-#
+   - Configure the YAML files for deployment, service, and other resources in Kubernetes.
+   - Use the `kubectl` commands to set up the pods and services.
 
-**9. Cleanup Resources:**
+4. **Push Docker Images to ECR (Elastic Container Registry):**
 
-    1. Delete Kubernetes resources using commands like:
+   - Push the created Docker images for both the frontend and backend to Amazon ECR for container storage.
 
-    ```
-    kubectl delete service cloudmart-frontend-app-service
-    kubectl delete deployment cloudmart-frontend-app
-    kubectl delete service cloudmart-backend-app-service
-    kubectl delete deployment cloudmart-backend-app
-    eksctl delete cluster --name cloudmart --region us-east-1
-    ```
-    2. Remove other cloud resources like S3 buckets, Lambda functions, DynamoDB tables, and any temporary files.
+5. **Update Kubernetes Deployment with Correct Configurations:**
+   - Ensure the deployment YAML files are correctly configured with the correct Docker image paths and environmental variables.
+   - Apply the updated Kubernetes configuration and deploy the application.
 
-#
+---
 
-**10. Check if everything is working or not**
+## 7. CI/CD Pipeline Configuration (AWS CodePipeline)
 
-    1. Check the pods for front-end:
+1. **Push Application Code to GitHub:**
 
-    ```
-    kubectl get pods
-    ```
+   - Push the latest version of the application code to your GitHub repository.
 
-    2. Go to the address shown and use http//: at the start.
+2. **Create Build Project in AWS CodeBuild:**
+
+   - Set up an AWS CodeBuild project to build the Docker images for both the frontend and backend from the GitHub repository.
+
+3. **Configure AWS CodeBuild for Application Deployment:**
+
+   - Set up the deployment configuration in AWS CodeBuild to deploy the application automatically when changes are detected in the repository.
+
+4. **Run CI/CD Pipeline:**
+   - Test the pipeline to verify that every new commit triggers a build and deployment.
+   - Ensure the application gets deployed correctly in the Kubernetes cluster after each commit.
+
+---
+
+## 8. Testing and Verification
+
+1. **Make Changes on GitHub:**
+
+   - Modify the application code in GitHub to verify that the CI/CD pipeline triggers as expected.
+
+2. **Monitor Kubernetes Deployment:**
+
+   - Ensure that the Kubernetes deployment successfully applies the updates by using `kubectl` commands to check the status.
+
+3. **Verify Infrastructure:**
+   - Check the EC2 instance, DynamoDB tables, BigQuery, and other resources to ensure they are functioning as expected.
+
+---
+
+## 9. Cleanup Resources
+
+1. **Delete Kubernetes Resources:**
+
+   - Remove the deployed resources using `kubectl` commands:
+
+   ```
+   kubectl delete service cloudmart-frontend-app-service
+   kubectl delete deployment cloudmart-frontend-app
+   kubectl delete service cloudmart-backend-app-service
+   kubectl delete deployment cloudmart-backend-app
+   eksctl delete cluster --name cloudmart --region us-east-1
+   ```
+
+## 10. Final Verification
+
+1. **Check Pods for Frontend:**
+
+   - Ensure the frontend pods are running properly by using the following command:
+
+   ```
+   kubectl get pods
+   ```
