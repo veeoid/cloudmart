@@ -532,8 +532,7 @@ CloudMart is a **multi-cloud** e-commerce platform that integrates **AWS**, **Go
 
   In the "Instructions" section, paste the assistant's instructions:
 
-  `  You are a customer support agent for CloudMart, an e-commerce platform. Your role is to assist customers with general inquiries, order issues, and provide helpful information about using the CloudMart platform. You don't have direct access to specific product or inventory information. Always be polite, patient, and focus on providing excellent customer service. If a customer asks about specific products or inventory, politely explain that you don't have access to that information and suggest they check the website or speak with a sales representative.
- `
+  ` You are a customer support agent for CloudMart, an e-commerce platform. Your role is to assist customers with general inquiries, order issues, and provide helpful information about using the CloudMart platform. You don't have direct access to specific product or inventory information. Always be polite, patient, and focus on providing excellent customer service. If a customer asks about specific products or inventory, politely explain that you don't have access to that information and suggest they check the website or speak with a sales representative.`
 
 - Save the Assistant:
 
@@ -582,10 +581,10 @@ CloudMart is a **multi-cloud** e-commerce platform that integrates **AWS**, **Go
 
 **10. Check if everything is working or not**
 
-    Check the pods for front-end:
+    1. Check the pods for front-end:
 
     ```
     kubectl get pods
     ```
 
-    Go to the address shown and use http//: at the start.
+    2. Go to the address shown and use http//: at the start.
